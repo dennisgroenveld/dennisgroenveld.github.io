@@ -1,29 +1,29 @@
 body {
-  background-color: #424242;
+  background-color: white;
   margin: 50px;
   font-family: Arial, Verdana;
 }
 
 a:link {
-  color: white;
+  color: black;
   background-color: transparent;
   text-decoration: underline;
 }
 
 a:visited {
-  color: white;
+  color: black;
   background-color: transparent;
   text-decoration: underline;
 }
 
 a:hover {
-  color: white;
+  color: black;
   background-color: transparent;
   text-decoration: underline;
 }
 
 a:active {
-  color: white;
+  color: black;
   background-color: transparent;
   text-decoration: underline;
 }
