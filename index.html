@@ -1,19 +1,114 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Saturday Rocks</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="sr.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturday Rocks - Freelance Project Management</title>
+    <style>
+        /* Light theme colors */
+        :root {
+            --primary-color: #1E88E5;
+            --secondary-color: #D32F2F;
+            --background-color: #FFFFFF;
+            --text-color: #333333;
+            --surface-color: #F4F4F4;
+            --border-color: #DDDDDD;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        header {
+            background-color: var(--surface-color);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: var(--primary-color);
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        section {
+            background-color: var(--surface-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            margin: 10px;
+            flex: 1 1 45%; /* Two-column layout */
+            box-sizing: border-box;
+            min-width: 300px; /* Ensures responsive layout */
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: var(--surface-color);
+            text-align: center;
+            padding: 20px 0;
+            border-top: 2px solid var(--primary-color);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
-
 <body>
-  <p align="left", style="color:black;">
-    <img src="LogoBlack.jpg" alt="Saturday Rocks" width="200px"><br><br><br>
-  </p>
-  <p align="center", style="color:black;">
-    If you reached this page, you probably already know me.
-  </p>
-  <p align="center", style="color:black;">
-    <a href="https://www.linkedin.com/in/dennisgroenveld/" target="_blank"><img border="0" src="LinkedIn.png" height="25px"></a>
-  </p>    
+    <header>
+        <h1>Saturday Rocks</h1>
+        <p>Freelance Project Management Services</p>
+    </header>
+
+    <main>
+        <!-- About Me Section -->
+        <section>
+            <h2>About Me</h2>
+            <p>Hello, I'm Dennis Groenveld. With years of experience in project management, I help businesses achieve their goals through efficient and effective project execution. Whether it's a small project or a large-scale initiative, I bring a wealth of knowledge and expertise to ensure your project's success.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section>
+            <h2>Services</h2>
+            <ul>
+                <li>Scrum Framework Implementation</li>
+                <li>Sprint Planning and Facilitation</li>
+                <li>Daily Stand-ups</li>
+                <li>Product Backlog Management</li>
+                <li>Retrospectives</li>
+                <li>Agile Coaching and Training</li>
+                <li>Stakeholder Collaboration</li>
+                <li>Continuous Improvement Practices</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Contact Info Section -->
+    <section style="text-align:center; padding: 20px;">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:dennis@saturday.rocks" style="color: var(--primary-color);">dennis@saturday.rocks</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/dennisgroenveld/" style="color: var(--primary-color);">linkedin.com/in/dennisgroenveld</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Saturday Rocks. All rights reserved.</p>
+    </footer>
 </body>
 </html>
