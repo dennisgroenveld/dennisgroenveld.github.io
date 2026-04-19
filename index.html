@@ -1,116 +1,431 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saturday Rocks - Freelance Project Management</title>
+    <title>Dennis Groenveld - Freelance Project Manager & Delivery Director</title>
+    <meta name="description" content="Portfolio and Resume of Dennis Groenveld, Delivery Director and Project Manager.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Light theme colors */
-        :root {
-            --primary-color: #1E88E5;
-            --secondary-color: #D32F2F;
-            --background-color: #FFFFFF;
-            --text-color: #333333;
-            --surface-color: #F4F4F4;
-            --border-color: #DDDDDD;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            /** padding: 20px; **/
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-        header {
-            background-color: var(--surface-color);
-            border-radius: 8px;
-            padding: 20px; 
-            text-align: left;
-            border-bottom: 2px solid var(--primary-color);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: var(--primary-color);
-        }
-        main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-        section {
-            background-color: var(--surface-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            margin: 10px; 
-            flex: 1 1 45%; /* Two-column layout */
-            box-sizing: border-box;
-            min-width: 300px; /* Ensures responsive layout */
-        }
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        footer {
-            background-color: var(--surface-color);
-            border-radius: 8px;
-            text-align: left;
-            padding: 20px;
-            border-top: 2px solid var(--primary-color);
-            /** position: fixed; **/
-            /** width: 100%; **/
-            /** bottom: 0; **/
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
         }
     </style>
 </head>
-<body>
-    <header>
-      <p>
-        <img src="logo300onWhite.png" alt="Saturday Rocks" width="200px"><br>
-      </p>
-    </header>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
 
-    <main>
-        <!-- About Me Section -->
-        <section>
-            <h2>About Me</h2>
-            Hi, I’m Dennis, a freelance consultant with extensive experience as a country manager, programme- and project manager, and as a scrum master. 
-            I’m a certified Google Cloud Digital Leader and Collaboration Engineer, specialising in leading and managing remote teams using agile principles 
-            and modern tools.
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-slate-200 transition-all duration-300" id="navbar">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="logo300onWhite.png" alt="Saturday Rocks Logo" class="h-10 w-auto">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-slate-600 hover:text-brand-600 text-sm font-medium transition-colors">About</a>
+                    <a href="#experience" class="text-slate-600 hover:text-brand-600 text-sm font-medium transition-colors">Experience</a>
+                    <a href="#skills" class="text-slate-600 hover:text-brand-600 text-sm font-medium transition-colors">Skills & Certs</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-            You can find more about me here:
-            <p align="left", style="color:black;">
-              <a href="https://www.linkedin.com/in/dennisgroenveld/" target="_blank"><img border="0" src="LinkedIn.png" height="25px"></a><br><br>
-              <a href="https://www.instagram.com/dennis.groenveld/" target="_blank"><img border="0" src="instagram-logo.png" height="25px"></a><br><br>
-              <a href="https://github.com/dennisgroenveld" target="_blank"><img border="0" src="GitHub-Logo.png" height="25px"></a>
-              </p>
-        </section>
+    <!-- Hero Section -->
+    <section id="about" class="pt-24 pb-12 lg:pt-32 lg:pb-16 bg-gradient-to-b from-slate-100 to-slate-50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
+                    Dennis Groenveld
+                </h1>
+                <p class="text-xl sm:text-2xl text-brand-600 font-medium mb-6">
+                    Freelance Project Manager & Delivery Director
+                </p>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                    I lead and coordinate technical IT projects, collaborating closely with senior stakeholders, vendors, and end-users to ensure the successful delivery of project objectives within established timelines and budgets. My approach guarantees alignment with business goals and stakeholder expectations, with a strong emphasis on change management. Ultimately, successful projects depend on satisfied users.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 text-sm text-slate-600 mb-8">
+                    <div class="flex items-center bg-white px-3 py-1.5 rounded-full shadow-sm border border-slate-200">
+                        <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-brand-600"></i> Netherlands (Dutch)
+                    </div>
+                    <div class="flex items-center bg-white px-3 py-1.5 rounded-full shadow-sm border border-slate-200">
+                        <i data-lucide="globe" class="w-4 h-4 mr-2 text-brand-600"></i> Global Experience
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Services Section -->
-        <section>
-            <h2>Recent Projects</h2>
-            <ul>
-                <li>[ongoing] Amsterdam, Netherlands. Engagement Manager for a Salesforce Automotive Cloud implementation for a financial services organization based in London, UK.</li>
-                <li>[ongoing] Amsterdam, Netherlands. Engagement Manager for a Salesforce Service Cloud implementation for a financial organization based in California, USA.</li>
-                <li>[ongoing] London, United Kingdom. Programme Manager for a multi-cloud Salesforce implementation at a fintech company.</li>
-                <li>[completed] Trivandrum, India. Led the implementation of GitHub (CoPilot) and coached multiple agile teams on adopting new tools and ways of working.</li>
-                <li>[completed] Den Haag, Netherlands and Trivandrum, India. Project Manager for the development of the ESDAL system for National Highways.</li>
-                <li>[completed] Den Haag, Netherlands. Consultant assisting in the definition of an agile delivery framework for a software company.</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-      <p>&copy; 2024 Saturday Rocks. All rights reserved.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12 flex items-center">
+                <h2 class="text-3xl font-bold text-slate-900">Professional Experience</h2>
+                <div class="ml-4 flex-grow h-px bg-slate-200"></div>
+            </div>
+
+            <div class="space-y-12">
+                
+                <!-- Saturday Rocks (Umbrella) -->
+                <div class="relative border-l-2 border-brand-200 pl-6 pb-2">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-brand-500 ring-4 ring-white"></div>
+                    <div class="mb-1">
+                        <h3 class="text-xl font-bold text-slate-900">Delivery Director (Freelance)</h3>
+                        <p class="text-lg font-medium text-brand-600">Saturday Rocks</p>
+                        <p class="text-sm text-slate-500 mt-1 flex items-center">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-1"></i> 05-2023 - Present
+                        </p>
+                    </div>
+                    <p class="text-slate-600 mt-3 mb-6">
+                        Managing an extensive portfolio of freelance consulting and delivery engagements. Utilizing advanced AI tools (GitHub CoPilot, AllAI, Gemini, ChatGPT, Claude, Perplexity, NotebookLM) and project management suites to drive efficiency. Below is my recent project portfolio under this umbrella:
+                    </p>
+
+                    <!-- Nested Engagements -->
+                    <div class="space-y-8 mt-6">
+                        <!-- OSF Digital -->
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-slate-800">Sr. Director of Customer Engagement</h4>
+                                    <p class="text-brand-600">OSF Digital</p>
+                                </div>
+                                <span class="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1 rounded-full">May 2024 – Present</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-3 flex items-center"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i> London Area, UK · Hybrid</p>
+                            <p class="text-slate-600 text-sm">Leading a Salesforce Multi-Cloud deployment programme at a fintech organization. Heading up project managers, change managers, and the DevOps organisation. Owner of the "Way of Working", reworking delivery methodology to be "AI-first".</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">Gen AI</span>
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">Salesforce (Sales/Service/Financial)</span>
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">Mulesoft</span>
+                            </div>
+                        </div>
+
+                        <!-- CNTXT -->
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-slate-800">Sr. Project Manager / Interim Head of Cloud Delivery</h4>
+                                    <p class="text-brand-600">CNTXT</p>
+                                </div>
+                                <span class="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1 rounded-full">Oct 2024 – Dec 2024</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-3 flex items-center"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i> Riyadh, Saudi Arabia · On-site</p>
+                            <p class="text-slate-600 text-sm">Led the Cloud Delivery team, providing expert guidance on Google Partner best practices. Assisted in developing a comprehensive service catalogue.</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">GCP</span>
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">Google Workspace</span>
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">Apigee</span>
+                            </div>
+                        </div>
+
+                        <!-- ARS (India) -->
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-slate-800">Senior Consultant & Project Manager</h4>
+                                    <p class="text-brand-600">ARS</p>
+                                </div>
+                                <span class="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1 rounded-full">Nov 2023 – Apr 2024</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-3 flex items-center"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i> Trivandrum, Kerala, India · On-site</p>
+                            <p class="text-slate-600 text-sm">Implemented agile ways of working and DevOps practices. Managed software development for National Highways (ESDAL system). Utilized GitHub Copilot to enhance coding capabilities.</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">Oracle Cloud</span>
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">MS Azure</span>
+                                <span class="text-xs bg-white border border-slate-200 px-2 py-1 rounded">GitHub Copilot / ChatGPT</span>
+                            </div>
+                        </div>
+
+                        <!-- ARS (NL) -->
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-slate-800">Senior Consultant / Project Manager</h4>
+                                    <p class="text-brand-600">ARS</p>
+                                </div>
+                                <span class="text-xs font-medium bg-slate-200 text-slate-700 px-2 py-1 rounded-full">Aug 2023 – Nov 2023</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-3 flex items-center"><i data-lucide="map-pin" class="w-3 h-3 mr-1"></i> Den Haag, Netherlands · Hybrid</p>
+                            <p class="text-slate-600 text-sm">Implemented a predictive agile software development methodology. Collaborated cross-functionally to streamline project management processes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Devoteam -->
+                <div class="relative border-l-2 border-brand-200 pl-6 pb-2">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-white"></div>
+                    <div class="mb-1">
+                        <h3 class="text-xl font-bold text-slate-900">Country Manager</h3>
+                        <p class="text-lg font-medium text-slate-700">Devoteam G Cloud UK</p>
+                        <p class="text-sm text-slate-500 mt-1 flex items-center">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-1"></i> 05-2021 - 05-2023
+                        </p>
+                    </div>
+                    <p class="text-slate-600 mt-3">
+                        Led Devoteam's Google business in the UK, overseeing sales, marketing, alliance management, and delivery. Achieved 400% revenue growth in 24 months, transforming the business to profitability. Built Customer Success, GWS, and GCP data/infrastructure teams from scratch.
+                    </p>
+                </div>
+
+                <!-- Wipro Digital -->
+                <div class="relative border-l-2 border-brand-200 pl-6 pb-2">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-white"></div>
+                    <div class="mb-1">
+                        <h3 class="text-xl font-bold text-slate-900">Director, Google Practice</h3>
+                        <p class="text-lg font-medium text-slate-700">Wipro Digital</p>
+                        <p class="text-sm text-slate-500 mt-1 flex items-center">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-1"></i> 04-2020 - 05-2021
+                        </p>
+                    </div>
+                    <p class="text-slate-600 mt-3">
+                        Transitioned from Appirio to Wipro Digital post-acquisition. Expanded team capabilities by incorporating Natural Language Processing, AI, Machine Learning, and Analytics into the portfolio.
+                    </p>
+                </div>
+
+                <!-- Appirio -->
+                <div class="relative border-l-2 border-brand-200 pl-6 pb-2">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-white"></div>
+                    <div class="mb-1">
+                        <h3 class="text-xl font-bold text-slate-900">Director, Google Practice Head / Agile PM</h3>
+                        <p class="text-lg font-medium text-slate-700">Appirio</p>
+                        <p class="text-sm text-slate-500 mt-1 flex items-center">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-1"></i> 10-2017 - 04-2020 &nbsp; <span class="italic text-slate-400">(EMEA Manager 04-2013 - 10-2017)</span>
+                        </p>
+                    </div>
+                    <ul class="list-disc list-outside ml-4 mt-3 text-slate-600 space-y-1 text-sm">
+                        <li>Member of the Executive Leadership Team (ELT). Led global delivery teams (US, EMEA, APAC).</li>
+                        <li>Turned around the Google Practice from a negative OB to a $15M business by 2017 with 54% margin.</li>
+                        <li>Grew the team from 2 to 30 FTEs globally; achieved Appirio Million Biller Club in 2018.</li>
+                        <li>Winner of Team of the Year (2016). Consistently maintained a 9.1/10 CSAT score.</li>
+                        <li>Obtained Workplace Transformation - Enterprise specialization from Google (2020).</li>
+                    </ul>
+                </div>
+
+                <!-- Older Experience Toggle -->
+                <div class="relative border-l-2 border-slate-200 pl-6 pb-2 pt-4">
+                    <div class="absolute -left-[9px] top-5 w-4 h-4 rounded-full bg-slate-200 ring-4 ring-white"></div>
+                    <details class="group cursor-pointer">
+                        <summary class="text-lg font-semibold text-slate-700 list-none flex items-center outline-none">
+                            <span class="border-b border-dashed border-slate-400">View Previous Experience (1987 - 2013)</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 ml-2 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <div class="mt-6 space-y-6 text-sm text-slate-600 cursor-default">
+                            
+                            <div class="border-b border-slate-100 pb-4">
+                                <h4 class="font-bold text-slate-800">White Stratus | <span class="font-normal">Google Apps Specialist / PM</span> <span class="text-slate-400 text-xs ml-2">01-2013 - 04-2013</span></h4>
+                                <p class="mt-1">Implementations at Nobel Biocare (Zurich) and social intranet at Travis Perkins (Docs, Sites, Apps Script).</p>
+                            </div>
+
+                            <div class="border-b border-slate-100 pb-4">
+                                <h4 class="font-bold text-slate-800">Stoneburn & WEB'R | <span class="font-normal">Google Apps Specialist / Scrum Master</span> <span class="text-slate-400 text-xs ml-2">01-2011 - 01-2013</span></h4>
+                                <p class="mt-1">Managed enterprise migrations to Google Apps from MS Exchange. Projects for Go-Ahead, Conde Nast, John Lewis Partnership.</p>
+                            </div>
+
+                            <div class="border-b border-slate-100 pb-4">
+                                <h4 class="font-bold text-slate-800">Berlage Lyceum | <span class="font-normal">Computer Science Teacher & IT Strategist</span> <span class="text-slate-400 text-xs ml-2">09-2009 - 04-2011</span></h4>
+                                <p class="mt-1">Shaped IT strategy focused on Ubuntu/macOS. Managed Google Apps for 1,300+ users. Taught HAVO/VWO students SDLC, HTML, databases, networks.</p>
+                            </div>
+
+                            <div class="border-b border-slate-100 pb-4">
+                                <h4 class="font-bold text-slate-800">Alumnus Software / Levi9 / LCI | <span class="font-normal">Country Manager / Sales Dir / PM</span> <span class="text-slate-400 text-xs ml-2">1999 - 2009</span></h4>
+                                <p class="mt-1">Extensive leadership in nearshore/offshore software development (Romania, India). Setup development labs, managed P&L, HR, and project delivery for web-based e-business and enterprise applications.</p>
+                            </div>
+
+                            <div class="pb-4">
+                                <h4 class="font-bold text-slate-800">Dutch Royal Navy & Early Career | <span class="font-normal">Military & Product Management</span> <span class="text-slate-400 text-xs ml-2">1987 - 1999</span></h4>
+                                <p class="mt-1">Financial administration on guided missile frigate HMS Tromp. Product Management for OS/2 security systems in EMEA. Early software matching systems development.</p>
+                            </div>
+
+                        </div>
+                    </details>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills, Tools & Certifications Section -->
+    <section id="skills" class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Skills & Tools -->
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                        <i data-lucide="wrench" class="w-6 h-6 mr-3 text-brand-600"></i> Expertise & Tools
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Methods & Techniques</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white border border-slate-200 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium shadow-sm">Agile (Scrum, Kanban)</span>
+                                <span class="bg-white border border-slate-200 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium shadow-sm">Prince2</span>
+                                <span class="bg-white border border-slate-200 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium shadow-sm">ITIL</span>
+                                <span class="bg-white border border-slate-200 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium shadow-sm">DevOps</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Project Management</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-sm">Smartsheets</span>
+                                <span class="bg-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-sm">Jira</span>
+                                <span class="bg-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-sm">Confluence</span>
+                                <span class="bg-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-sm">MS Project</span>
+                                <span class="bg-slate-200 text-slate-800 px-3 py-1.5 rounded-lg text-sm">GitHub Boards</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Ecosystems & AI</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-brand-50 text-brand-700 border border-brand-200 px-3 py-1.5 rounded-lg text-sm">Google Workspace / GCP</span>
+                                <span class="bg-brand-50 text-brand-700 border border-brand-200 px-3 py-1.5 rounded-lg text-sm">Salesforce Multi-Cloud</span>
+                                <span class="bg-brand-50 text-brand-700 border border-brand-200 px-3 py-1.5 rounded-lg text-sm">GitHub CoPilot</span>
+                                <span class="bg-brand-50 text-brand-700 border border-brand-200 px-3 py-1.5 rounded-lg text-sm">ChatGPT / Gemini / Claude</span>
+                                <span class="bg-brand-50 text-brand-700 border border-brand-200 px-3 py-1.5 rounded-lg text-sm">Perplexity / NotebookLM</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Languages</h3>
+                            <div class="flex gap-4">
+                                <div class="text-sm"><span class="font-semibold text-slate-800">Dutch:</span> Native</div>
+                                <div class="text-sm"><span class="font-semibold text-slate-800">English:</span> Proficient</div>
+                                <div class="text-sm"><span class="font-semibold text-slate-800">German:</span> Conversational</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications & Education -->
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center">
+                        <i data-lucide="award" class="w-6 h-6 mr-3 text-brand-600"></i> Certifications & Education
+                    </h2>
+                    
+                    <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm mb-6">
+                        <ul class="space-y-3 text-sm text-slate-700">
+                            <li class="flex justify-between border-b border-slate-100 pb-2">
+                                <span>Google Workspace Sales Credential <span class="text-slate-400 text-xs ml-1">(re-certified)</span></span>
+                                <span class="font-medium text-brand-600">2023</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-100 pb-2">
+                                <span>Google Cloud Sales Credential <span class="text-slate-400 text-xs ml-1">(re-certified)</span></span>
+                                <span class="font-medium text-brand-600">2023</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-100 pb-2">
+                                <span>Professional Google Workspace Administrator</span>
+                                <span class="font-medium text-brand-600">2023</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-100 pb-2">
+                                <span>Google Cloud Digital Leader</span>
+                                <span class="font-medium text-brand-600">2021</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-100 pb-2">
+                                <span>G Suite Administration Specialisation</span>
+                                <span class="font-medium text-brand-600">2020</span>
+                            </li>
+                            <li class="flex justify-between border-b border-slate-100 pb-2">
+                                <span>Managing Remote Teams - Gitlab</span>
+                                <span class="font-medium text-brand-600">2020</span>
+                            </li>
+                            <li class="flex justify-between pb-1">
+                                <span>The Appirio Way - Agile Project Management</span>
+                                <span class="font-medium text-brand-600">2014, 2016</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Education</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="mt-1 bg-slate-200 p-1.5 rounded-md mr-3">
+                                <i data-lucide="graduation-cap" class="w-4 h-4 text-slate-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-800">Logistical Academy, Dutch Royal Navy</p>
+                                <p class="text-xs text-slate-500">Amsterdam, 1988</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="mt-1 bg-slate-200 p-1.5 rounded-md mr-3">
+                                <i data-lucide="book" class="w-4 h-4 text-slate-600"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-800">College (HAVO), Montessori Lyceum</p>
+                                <p class="text-xs text-slate-500">Amsterdam, 1987</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0 text-center md:text-left">
+                <p class="text-white font-bold text-lg tracking-tight mb-1">Dennis Groenveld</p>
+                <p class="text-sm">Delivery Director & Project Manager</p>
+            </div>
+            <div class="flex space-x-6">
+                <!-- You can add LinkedIn or GitHub URLs here -->
+                <a href="#" class="hover:text-white transition-colors">
+                    <span class="sr-only">LinkedIn</span>
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-8 border-t border-slate-800 text-sm text-center md:text-left">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Dennis Groenveld. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar blur effect on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+    </script>
 </body>
 </html>
