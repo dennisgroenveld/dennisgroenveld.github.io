@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dennis Groenveld - Freelance Project Manager & AI-Native Delivery Director</title>
     <meta name="description" content="Dennis Groenveld leads complex IT programmes with AI built into how the work gets done, and spec-driven development as the default.">
+    <script>
+        // Apply the saved theme, or the OS preference, before first paint to avoid a flash
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem('theme'); } catch (e) {}
+            if (theme !== 'light' && theme !== 'dark') {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -16,6 +27,20 @@
             --surface: #ffffff;
             --bg: #f8fafc;
             --accent: #ed3237; /* red from the Saturday Rocks logo */
+            --shadow: rgba(17, 24, 39, 0.08);
+            color-scheme: light;
+        }
+
+        /* Dark palette; data-theme is set before first paint by the script in <head> */
+        :root[data-theme="dark"] {
+            --ink: #f3f4f6;
+            --muted: #9ca3af;
+            --line: #1f2937;
+            --surface: #111827;
+            --bg: #030712;
+            --accent: #f2555a; /* lifted slightly for contrast on dark */
+            --shadow: rgba(0, 0, 0, 0.4);
+            color-scheme: dark;
         }
 
         *, *::before, *::after { box-sizing: border-box; }
@@ -106,7 +131,7 @@
         .links a:hover,
         .links a:focus-visible {
             border-color: var(--accent);
-            box-shadow: 0 4px 14px rgba(17, 24, 39, 0.08);
+            box-shadow: 0 4px 14px var(--shadow);
             transform: translateY(-1px);
             outline: none;
         }
@@ -118,6 +143,50 @@
             fill: currentColor;
         }
 
+        /* Show the logo variant that matches the active theme */
+        .logo-dark { display: none; }
+        :root[data-theme="dark"] .logo-light { display: none; }
+        :root[data-theme="dark"] .logo-dark { display: block; }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            width: 2.75rem;
+            height: 2.75rem;
+            display: grid;
+            place-items: center;
+            padding: 0;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--ink);
+            cursor: pointer;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+
+        .theme-toggle:hover,
+        .theme-toggle:focus-visible {
+            border-color: var(--accent);
+            box-shadow: 0 4px 14px var(--shadow);
+            outline: none;
+        }
+
+        .theme-toggle svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Icon shows the mode you'd switch to: moon in light mode, sun in dark */
+        .icon-sun { display: none; }
+        :root[data-theme="dark"] .icon-sun { display: block; }
+        :root[data-theme="dark"] .icon-moon { display: none; }
+
         footer {
             padding: 1.5rem 1rem;
             text-align: center;
@@ -126,16 +195,22 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .links a { transition: none; }
+            .links a, .theme-toggle { transition: none; }
             .links a:hover { transform: none; }
         }
     </style>
 </head>
 <body>
 
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+
     <main>
         <div class="card">
-            <img src="logo300onWhite.png" alt="Saturday Rocks" class="logo">
+            <img src="logo300onWhite.png" alt="Saturday Rocks" class="logo logo-light">
+            <img src="logo300onDark.png" alt="Saturday Rocks" class="logo logo-dark">
 
             <h1>Dennis Groenveld</h1>
             <p class="role">Freelance Project Manager &amp; AI-Native Delivery Director</p>
@@ -176,6 +251,26 @@
     <script>
         // Keep the copyright year current without document.write
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Theme toggle: flip data-theme, keep the label accurate, remember the choice
+        (function () {
+            var root = document.documentElement;
+            var button = document.getElementById('theme-toggle');
+
+            function syncLabel() {
+                var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                button.setAttribute('aria-label', 'Switch to ' + next + ' mode');
+            }
+
+            button.addEventListener('click', function () {
+                var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                syncLabel();
+            });
+
+            syncLabel();
+        })();
     </script>
 </body>
 </html>
